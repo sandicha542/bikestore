@@ -362,15 +362,6 @@ select {
     border-color: grey;
     outline: 0;
   }
-.increament-size {
-    margin: 15px;
-}
-.increament-size input {
-    background-color: #1ABC9C;
-    color: white;
-    border: none;
-    width: 15%;
-}
 
   .booking-bike .btn {
     width: 295px;
