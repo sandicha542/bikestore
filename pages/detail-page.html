@@ -30,13 +30,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="/bikestore/index.html">Home</a>
+              <a class="nav-link active" href="/index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/bikestore/index.html">Categories</a>
+              <a class="nav-link" href="/index.html">Categories</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/bikestore/index.html">Product</a>
+              <a class="nav-link" href="/index.html">Product</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Sign Up</a>
@@ -115,6 +115,7 @@
                    <div class="booking-bike border border-secondary">
                     <h3>Booking Bike</h3>
                     <h2>RP100.000.000</h2>
+                    <form id="form1" runat="server">                   
                     <label for=color-select>color <br>
                       <select class="color" id="color-select">
                         <option>Black</option>
@@ -122,10 +123,30 @@
                         <option>Yellow</option>
                         <option>Silver</option>
                       </select>
+
+  
+                      <div class="increament-size">
+                        <div class="row">
+                        <input type="button" onclick="incrementDropDownList();" value="-" />
+                        
+                        <select name="size" id="size" style="width:205px;border-radius:0px;text-align: center;" >
+                          <option>Select Size</option>
+                          <option value="9:00">S</option>
+                          <option value="12:00">M</option>
+                          <option value="16:00">L</option>
+                          <option value="22:00">XL</option>
+                        </select>
+                        <input type="button" onclick="incrementDropDownList();" value="+" />
+                        </div>
+
+                      </div>
+                    
+
                         <label>
-                   <a href="booking-page.html">
-                   <div class="btn btn-primary">Continue to Book</div>
-                   </a>
+                        <a href="booking-page.html">
+                        <div class="btn btn-primary">Continue to Book</div>
+                        </a>
+                    </form>
                 </div>
 
                 </div>
@@ -333,6 +354,23 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="/bikestore/frontend/libraries/bootstrap/js/bootstrap.js"></script>
     
+    <script type="text/javascript">
+
+    function incrementDropDownList()
+    {
+     var dropDownListRef = document.getElementById('size');
+     var selectedIndex = dropDownListRef.selectedIndex;
+    
+     selectedIndex++;
+    
+     if ( selectedIndex >= dropDownListRef.options.length )
+      selectedIndex = 0;
+    
+     dropDownListRef.selectedIndex = selectedIndex;
+    }
+      document.forms[0].size.selectedIndex = +1; 
+    // -->
+    </script>
 
   </body>
 </html>
